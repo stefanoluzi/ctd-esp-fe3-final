@@ -32,6 +32,7 @@ const Detail = () => {
           <p>Website: {dentist.website}</p>
         </div>
       </div> */}
+      <div className={state.theme}>
         <h1>Dentist's Detail {dentist.id} </h1>
         <table border="1">
           <tr>
@@ -47,6 +48,7 @@ const Detail = () => {
             <td>{dentist.website}</td>
           </tr>
         </table>
+      </div>
     </>
   );
 };

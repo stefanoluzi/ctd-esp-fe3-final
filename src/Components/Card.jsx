@@ -40,11 +40,11 @@ const Card = ({ item, onDelete }) => {
         </div>
       </Link>
       {addedToFavs ? (
-        <button onClick={handleRemoveFromFavs} className="btn">
+        <button onClick={handleRemoveFromFavs} className="btn-card">
           🗑️
         </button>
       ) : (
-        <button onClick={handleAddToFavs} className="btn">
+        <button onClick={handleAddToFavs} className="btn-card">
           ⭐
         </button>
       )}

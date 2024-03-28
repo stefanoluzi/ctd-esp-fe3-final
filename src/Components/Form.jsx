@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import { useGlobalStates } from "../Context/GlobalContext";
 
 const Form = () => {
+  const { state } = useGlobalStates();
   const [contacto, setContacto] = useState({
     nombre: "",
     email: "",
@@ -39,7 +41,7 @@ const Form = () => {
   };
 
   return (
-    <div className="form">
+    <div className={`form ${state.theme}`}>
       <form onSubmit={handleSubmit}>
         <label>Nombre completo</label>
         <input
@@ -55,15 +57,19 @@ const Form = () => {
             setContacto({ ...contacto, email: event.target.value })
           }
         />
-        <button className="btn" >Enviar</button>
+        <button className="btn">Enviar</button>
       </form>
       <div className="afterForm">
         {show && (
-          <h4>
+          <h4 className="okmsg">
             Gracias {contacto.nombre}, te contactaremos cuanto antes vía email.
           </h4>
         )}
-        {err && <p>Por favor, verifique su información nuevamente.</p>}
+        {err && (
+          <p className="errmsg">
+            Por favor, verifique su información nuevamente.
+          </p>
+        )}
         <hr />
       </div>
     </div>
