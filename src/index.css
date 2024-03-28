@@ -1,5 +1,4 @@
 
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -7,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -49,8 +49,6 @@ footer {
 
 }
 
-
-
 footer > img {
   width: 200px;
   margin: 0;
@@ -66,7 +64,7 @@ form {
   justify-content: space-around;
   width: 300px;
   height: 100px;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
 .card {
@@ -100,7 +98,8 @@ form {
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+
+
 }
 
 table {
@@ -162,14 +161,15 @@ tr:nth-child(even) {
   color: white;
 }
 
+
 /* Navbar */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #343a40; /* Dark background color */
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  padding: 1rem 10rem ;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.5); 
+  border-bottom: 2px solid rgba(0, 0, 0, 0.205); 
 }
 
 .nav ul {
@@ -188,38 +188,27 @@ tr:nth-child(even) {
 }
 
 .nav a {
-  font-size: 1.2rem; /* Larger font size */
-  font-weight: bold; /* Bold font weight */
-  color: #ffffff; /* Light text color */
+  font-size: 1.2rem; 
+  font-weight: bold; 
+
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .nav a:hover {
-  color: #ffffff; /* Hover color */
-}
-
-.nav button {
-  background-color: #007bff; /* Blue button color */
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 1.2rem; /* Larger font size */
-  font-weight: bold; /* Bold font weight */
-  color: white;
-  transition: background-color 0.3s ease;
+  color: #676879; 
 }
 
 .nav button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3; 
 }
 
 /* Footer */
 .footer {
-  background-color: #343a40; /* Dark background color */
+  background-color: #343a40; 
   padding: 2rem;
   text-align: center;
-  color: #ffffff; /* Light text color */
+  color: #ffffff; 
 }
 
 .footer p {
@@ -227,92 +216,70 @@ tr:nth-child(even) {
 }
 
 .footer a {
-  color: #007bff; /* Blue link color */
+  color: #007bff; 
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer a:hover {
-  color: #0056b3; /* Darker blue on hover */
+  color: #0056b3; 
 }
 
 
-/* Default light theme */
-.form {
-  margin: 2rem auto;
-  max-width: 400px;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+/* BOTON DE CAMBIO DE TEMA */
 
-.form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-.form input {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.form button {
-  width: 100%;
-  padding: 0.5rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+.toggle {
   cursor: pointer;
-  font-weight: bold;
+  display: inline-block;
 }
 
-.form button:hover {
-  background-color: #0056b3;
+.toggle-switch {
+  display: inline-block;
+  background: #ccc;
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #0400f7;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 30px;
 }
 
-.form h4 {
-  margin-top: 1rem;
-  font-weight: bold;
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
 }
 
-.form p {
-  color: red;
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
 }
 
-hr {
-  margin-top: 2rem;
-  border: none;
-  border-top: 1px solid #ccc;
+.btn{
+  margin: 1rem;
 }
-
-/* Dark theme */
-.dark .form {
-  border-color: #555;
-  background-color: #222;
-  color: #fff;
-}
-
-.dark .form label {
-  color: #fff;
-}
-
-.dark .form input {
-  border-color: #555;
-  color: #fff;
-}
-
-.dark .form button {
-  background-color: #007bff; /* Dark theme button color */
-  color: #fff;
-}
-
-.dark .form button:hover {
-  background-color: #0056b3;
-}
-
-

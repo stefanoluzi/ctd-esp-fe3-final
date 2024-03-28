@@ -55,7 +55,7 @@ const Form = () => {
             setContacto({ ...contacto, email: event.target.value })
           }
         />
-        <button>Enviar</button>
+        <button className="btn" >Enviar</button>
       </form>
       <div className="afterForm">
         {show && (

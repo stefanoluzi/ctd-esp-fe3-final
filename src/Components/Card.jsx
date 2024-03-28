@@ -39,13 +39,14 @@ const Card = ({ item, onDelete }) => {
           <h3>Id: {item.id}</h3>
         </div>
       </Link>
-
       {addedToFavs ? (
-        <button onClick={handleRemoveFromFavs} className="removeFromFavs">
+        <button onClick={handleRemoveFromFavs} className="btn">
           🗑️
         </button>
       ) : (
-        <button onClick={handleAddToFavs}>⭐</button>
+        <button onClick={handleAddToFavs} className="btn">
+          ⭐
+        </button>
       )}
     </div>
   );
